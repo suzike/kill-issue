@@ -1,9 +1,54 @@
-# Kill-Issue · 汽车软件问题排查 Skill
+<div align="center">
 
-> 把"汽车控制器软件问题排查"固化为标准流程：**读上下文 → 澄清问题 → 判定归属层 → 定位证据 → 输出规范化报告 → 登记台账**。
-> 通用方法论，适用于任何 Simulink 控制模型 / 生成代码项目的软件问题。
+# 🎯 Kill-Issue · 汽车软件问题排查 Skill
 
-## 特性
+**把"汽车控制器软件问题排查"固化为标准流程 —— 读上下文 → 澄清问题 → 判定归属层 → 定位证据 → 输出规范化报告 → 登记台账**
+
+[![Release](https://img.shields.io/github/v/release/suzike/kill-issue?style=flat-square&color=blue&label=Release)](../../releases)
+[![GitHub stars](https://img.shields.io/github/stars/suzike/kill-issue?style=flat-square&color=yellow&label=Stars)](../../stargazers)
+[![Repo size](https://img.shields.io/github/repo-size/suzike/kill-issue?style=flat-square&color=blueviolet&label=Repo%20Size)](../../)
+[![Last commit](https://img.shields.io/github/last-commit/suzike/kill-issue?style=flat-square&color=informational&label=Last%20Commit)](../../commits)
+[![Language](https://img.shields.io/badge/Language-Markdown%20%7C%20Python-blue?style=flat-square)](./skill/Kill-Issue)
+[![License](https://img.shields.io/badge/License-Proprietary-lightgrey?style=flat-square)](./README.md#许可)
+
+---
+
+**技术栈 / 能力标签**
+
+![Simulink](https://img.shields.io/badge/-Simulink%20%E6%A8%A1%E5%9E%8B-blue)
+![Generated Code](https://img.shields.io/badge/-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81-blue)
+![HIL/MIL](https://img.shields.io/badge/-HIL%2FMIL-blueviolet)
+![CANoe](https://img.shields.io/badge/-CANoe-orange)
+![CANape](https://img.shields.io/badge/-CANape-orange)
+![ARXML/DBC](https://img.shields.io/badge/-ARXML%2FDBC-brightgreen)
+![根因分析](https://img.shields.io/badge/-%E6%A0%B9%E5%9B%A0%E5%88%86%E6%9E%90-success)
+![5W/8D](https://img.shields.io/badge/-5W%2F8D-important)
+![中文](https://img.shields.io/badge/-%E4%B8%AD%E6%96%87%20%7C%20Chinese-lightgrey)
+
+**通用方法论 · 适用于任何 Simulink 控制模型 / 生成代码项目**
+
+</div>
+
+---
+
+## 📑 目录
+
+- [特性](#-特性)
+- [工作流](#-工作流)
+- [结构组成](#-结构组成)
+- [目录结构](#-目录结构)
+- [安装](#-安装)
+- [快速开始](#-快速开始)
+- [上下文材料分级](#-上下文材料分级)
+- [报告模板](#-报告模板)
+- [报告写作规范](#-报告写作规范)
+- [项目目录约定](#-项目目录约定)
+- [版本与发布](#-版本与发布)
+- [许可](#-许可)
+
+---
+
+## ✨ 特性
 
 - **通用**：不限于任何控制器、功能类型或问题类型（状态/显示、控制逻辑、标定、通信报文、测试异常等）
 - **五层归因**：模型 / 软件 / 测试 / 需求 / 其他
@@ -12,15 +57,21 @@
 - **上下文分级**：模型+代码必须，DBC 条件必需，其余按需——不要求 7 类材料给全
 - **结构化目录**：`000_Context/` 通用上下文 + `001/002/003-问题` 串行编号 + 最外层台账
 
-## 工作流
+---
+
+## 🔄 工作流
 
 ![Kill-Issue 排查工作流](docs/images/workflow.svg)
 
-## 结构组成
+---
+
+## 🧩 结构组成
 
 ![Kill-Issue 结构组成](docs/images/structure.svg)
 
-## 目录结构
+---
+
+## 📂 目录结构
 
 ```
 Kill-Issue/
@@ -38,7 +89,9 @@ Kill-Issue/
 └── assets/issue-folder-template/     问题描述（自动补全版）与附件说明模板
 ```
 
-## 安装
+---
+
+## 📥 安装
 
 ### Reasonix（推荐）
 
@@ -51,7 +104,9 @@ Kill-Issue/
 
 把 `Kill-Issue/` 文件夹放到 `~/.claude/skills/`（个人）或项目 `.claude/skills/`（项目级）。若工具校验要求全小写，文件夹改名 `kill-issue` 即可（仅安装适配，正式名为 Kill-Issue）。
 
-## 快速开始
+---
+
+## 🚀 快速开始
 
 ```bash
 # 1. 初始化：建通用上下文目录 + 台账 + 问题文件夹
@@ -66,7 +121,9 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 1. 把问题文件丢进 `附件/` 或拖入对话：logs、CANoe/CANape 报文（.asc/.blf/.mf4/.dat）、截图、trace
 2. 输入框一句话描述："XX 模式下某执行器开度很小调不了"
 
-## 上下文材料分级（不需要 7 类给全）
+---
+
+## 📋 上下文材料分级（不需要 7 类给全）
 
 | 级别 | 材料 | 说明 |
 |---|---|---|
@@ -74,7 +131,9 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 | **条件必需** | DBC / 接口表（04_Interface） | 问题附件含 log/报文时必给 DBC，否则报文解析不成信号 |
 | **按需** | 需求（03）、标定（05）、测试说明（06）、共享日志（07） | 按问题类型需要时再提供，缺失不阻塞 |
 
-## 报告模板（用户可选）
+---
+
+## 📝 报告模板（用户可选）
 
 | 报告形式 | 适用场景 | 产物文件名 |
 |---|---|---|
@@ -84,7 +143,9 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 | 8D 报告 | 量产/供应商质量问题的完整纠正流程 | 8D报告.md |
 | 轻量定位简报 | 快速确认问题在哪一层 | 定位简报.md |
 
-## 报告写作规范（skill 强制）
+---
+
+## 📏 报告写作规范（skill 强制）
 
 1. **结论先行**：开头一句话结论 = 结论 + 根因 + 触发机制
 2. **图文并茂**：关键机制配表格/流程图，模型与日志证据配截图
@@ -93,7 +154,9 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 5. 归因方向准确：谁触发谁、哪一侧先变，不确定写入"遗留确认点"
 6. 证据索引：报告尾部"环节 / 语义 / 位置"三列表
 
-## 项目目录约定（编号体系）
+---
+
+## 🗂 项目目录约定（编号体系）
 
 ```
 <项目根>/
@@ -103,7 +166,9 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 └── 问题清单.md            # 台账（最外层，每完成一个问题登记一行）
 ```
 
-## 版本与发布
+---
+
+## 🏷 版本与发布
 
 | 版本 | 说明 | Release |
 |---|---|---|
@@ -111,6 +176,8 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 
 Release 打包产物：`Kill-Issue.skill`（zip 格式，顶层目录 `Kill-Issue/`），见 [dist/](dist/)。
 
-## 许可
+---
+
+## 📄 许可
 
 内部工具，未经授权不得对外分发。内容仅供参考学习，使用产生的后果由使用者自行承担。
