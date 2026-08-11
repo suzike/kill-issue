@@ -14,33 +14,11 @@
 
 ## 工作流
 
-```mermaid
-flowchart TD
-    A[初始化并规整上下文<br/>000_Context/ · 分级检查] --> B[收集输入并自动生成问题描述<br/>工程师: 丢文件 + 一句话]
-    B --> C[澄清提问<br/>现象/复现/版本/报告形式]
-    C --> D[判定问题归属层<br/>模型/软件/测试/需求/其他]
-    D --> E[定位证据<br/>代码块+注释 · 模型截图 · 需求/接口 · 日志]
-    E --> F[选模板、出报告]
-    F --> G[登记台账<br/>最外层 问题清单.md]
-    G -->|下一个问题| A
-```
+![Kill-Issue 排查工作流](docs/images/workflow.svg)
 
 ## 结构组成
 
-```mermaid
-graph LR
-    subgraph Kill-Issue
-        SK[SKILL.md 主流程] --> R[references/]
-        SK --> S[scripts/]
-        SK --> A[assets/]
-        R --> R1[5 个报告模板]
-        R --> R2[context-layout]
-        R --> R3[log-reading]
-        R --> R4[debug-methods]
-        S --> S1[init_context.py]
-        A --> A1[问题描述模板]
-    end
-```
+![Kill-Issue 结构组成](docs/images/structure.svg)
 
 ## 目录结构
 

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <!-- 顶部：SKILL.md -->
+  <rect x="330" y="30" width="340" height="64" rx="14" fill="#1d4ed8"/>
+  <text x="500" y="58" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">SKILL.md · 主流程</text>
+  <text x="500" y="80" font-size="12.5" fill="#dbeafe" text-anchor="middle">7 步排查流程：初始化 → 收集 → 澄清 → 判定 → 定位 → 出报告 → 登记</text>
+
+  <!-- 连线 -->
+  <line x1="390" y1="96" x2="260" y2="158" stroke="#93c5fd" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="500" y1="96" x2="625" y2="158" stroke="#93c5fd" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="610" y1="96" x2="870" y2="158" stroke="#93c5fd" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- references 卡片 -->
+  <rect x="30" y="160" width="460" height="370" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <rect x="30" y="160" width="460" height="40" rx="14" fill="#dbeafe"/>
+  <text x="260" y="186" font-size="15.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">references/ · 参考资料（按需加载）</text>
+
+  <g font-size="13.5" fill="#1e293b">
+    <circle cx="58"  cy="228" r="5" fill="#2563eb"/><text x="74" y="232">报告模板 ×5：根因分析（默认推荐）</text>
+    <circle cx="58"  cy="256" r="5" fill="#2563eb"/><text x="74" y="260">通用问题排查 · 5W · 8D · 轻量简报</text>
+    <circle cx="58"  cy="292" r="5" fill="#0891b2"/><text x="74" y="296">report-rootcause.md — 根因分析模板（默认）</text>
+    <circle cx="58"  cy="320" r="5" fill="#0891b2"/><text x="74" y="324">report-general.md — 通用问题排查报告模板</text>
+    <circle cx="58"  cy="348" r="5" fill="#0891b2"/><text x="74" y="352">report-5w.md / report-8d.md / report-brief.md</text>
+    <circle cx="58"  cy="384" r="5" fill="#059669"/><text x="74" y="388">context-layout.md — 目录结构与材料分级</text>
+    <circle cx="58"  cy="412" r="5" fill="#059669"/><text x="74" y="416">log-reading.md — CANoe/CANape 报文解析指引</text>
+    <circle cx="58"  cy="440" r="5" fill="#059669"/><text x="74" y="444">debug-methods.md — 排查方法库（7 大套路）</text>
+    <circle cx="58"  cy="476" r="5" fill="#7c3aed"/><text x="74" y="480">写作规范：结论先行 · 图文并茂 · 禁信号名堆砌</text>
+    <circle cx="58"  cy="504" r="5" fill="#7c3aed"/><text x="74" y="508">信号名必配业务语义翻译 · 归因方向准确</text>
+  </g>
+
+  <!-- scripts 卡片 -->
+  <rect x="520" y="160" width="210" height="200" rx="14" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+  <rect x="520" y="160" width="210" height="40" rx="14" fill="#d1fae5"/>
+  <text x="625" y="186" font-size="15.5" font-weight="bold" fill="#064e3b" text-anchor="middle">scripts/ · 工具</text>
+  <g font-size="13" fill="#1e293b">
+    <text x="548" y="224" font-weight="bold">init_context.py</text>
+    <circle cx="548" cy="252" r="4.5" fill="#059669"/><text x="564" y="256">建上下文目录 000_Context/</text>
+    <circle cx="548" cy="278" r="4.5" fill="#059669"/><text x="564" y="282">台账 问题清单.md</text>
+    <circle cx="548" cy="304" r="4.5" fill="#059669"/><text x="564" y="308">--issue 建问题文件夹</text>
+    <circle cx="548" cy="330" r="4.5" fill="#059669"/><text x="564" y="334">--organize 启发式归类</text>
+  </g>
+
+  <!-- assets 卡片 -->
+  <rect x="760" y="160" width="210" height="200" rx="14" fill="#fdf4ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <rect x="760" y="160" width="210" height="40" rx="14" fill="#f3e8ff"/>
+  <text x="865" y="186" font-size="15.5" font-weight="bold" fill="#581c87" text-anchor="middle">assets/ · 模板</text>
+  <g font-size="13" fill="#1e293b">
+    <text x="788" y="224" font-weight="bold">issue-folder-template/</text>
+    <circle cx="788" cy="252" r="4.5" fill="#9333ea"/><text x="804" y="256">问题描述.md（自动补全版）</text>
+    <circle cx="788" cy="278" r="4.5" fill="#9333ea"/><text x="804" y="282">附件说明.md</text>
+    <text x="788" y="316" font-size="12" fill="#475569">工程师无需填写，排查开始时</text>
+    <text x="788" y="334" font-size="12" fill="#475569">由 agent 自动提取信息补全</text>
+  </g>
+
+  <!-- 底部说明条 -->
+  <rect x="30" y="545" width="940" height="0" rx="0" fill="none"/>
+  <text x="500" y="535" font-size="12" fill="#64748b" text-anchor="middle">Kill-Issue · 通用汽车软件问题排查 Skill · 结构组成</text>
+</svg>

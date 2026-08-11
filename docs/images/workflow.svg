@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 480" font-family="'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrowLoop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0e7490"/>
+    </marker>
+  </defs>
+
+  <!-- 行 1：步骤 1-4 -->
+  <g>
+    <rect x="40"   y="50" width="250" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <rect x="360"  y="50" width="250" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <rect x="680"  y="50" width="250" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <rect x="1000" y="50" width="250" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  </g>
+  <g font-size="15" fill="#1e293b" text-anchor="middle">
+    <text x="165"  y="95">① 初始化并规整上下文</text>
+    <text x="485"  y="95">② 收集输入并自动生成问题描述</text>
+    <text x="805"  y="95">③ 澄清提问</text>
+    <text x="1125" y="95">④ 判定问题归属层</text>
+  </g>
+  <g font-size="11.5" fill="#475569" text-anchor="middle">
+    <text x="165"  y="122">000_Context/ · 材料分级检查</text>
+    <text x="485"  y="122">工程师：丢文件 + 一句话</text>
+    <text x="805"  y="122">现象/预期/复现/版本/报告形式</text>
+    <text x="1125" y="122">模型 · 软件 · 测试 · 需求 · 其他</text>
+  </g>
+
+  <!-- 行 2：步骤 5-7 -->
+  <g>
+    <rect x="1000" y="300" width="250" height="110" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="1.5"/>
+    <rect x="680"  y="300" width="250" height="110" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="1.5"/>
+    <rect x="360"  y="300" width="250" height="110" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="1.5"/>
+  </g>
+  <g font-size="15" fill="#1e293b" text-anchor="middle">
+    <text x="1125" y="345">⑤ 定位证据</text>
+    <text x="805"  y="345">⑥ 选模板、出报告</text>
+    <text x="485"  y="345">⑦ 登记台账</text>
+  </g>
+  <g font-size="11.5" fill="#475569" text-anchor="middle">
+    <text x="1125" y="372">代码块+注释 · 模型截图 · 日志</text>
+    <text x="805"  y="372">5 种报告模板可选，默认根因分析</text>
+    <text x="485"  y="372">最外层 问题清单.md</text>
+  </g>
+
+  <!-- 步骤编号圆 -->
+  <g font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="59"  cy="69"  r="14" fill="#1d4ed8"/><text x="59"  y="74">1</text>
+    <circle cx="379" cy="69"  r="14" fill="#1d4ed8"/><text x="379" y="74">2</text>
+    <circle cx="699" cy="69"  r="14" fill="#1d4ed8"/><text x="699" y="74">3</text>
+    <circle cx="1019" cy="69" r="14" fill="#1d4ed8"/><text x="1019" y="74">4</text>
+    <circle cx="1019" cy="319" r="14" fill="#0e7490"/><text x="1019" y="324">5</text>
+    <circle cx="699"  cy="319" r="14" fill="#0e7490"/><text x="699"  y="324">6</text>
+    <circle cx="379"  cy="319" r="14" fill="#0e7490"/><text x="379"  y="324">7</text>
+  </g>
+
+  <!-- 行内箭头 -->
+  <line x1="292" y1="105" x2="356" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="612" y1="105" x2="676" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="932" y1="105" x2="996" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1002" y1="355" x2="936" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="682" y1="355" x2="616" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ④ → ⑤ 垂直箭头 -->
+  <line x1="1125" y1="162" x2="1125" y2="296" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ⑦ → ① 循环虚线箭头 -->
+  <path d="M 358,355 L 20,355 L 20,160 L 36,160" fill="none" stroke="#0e7490" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowLoop)"/>
+  <text x="20" y="262" font-size="11.5" fill="#0e7490" text-anchor="middle" transform="rotate(-90 20 262)">下一个问题</text>
+</svg>
