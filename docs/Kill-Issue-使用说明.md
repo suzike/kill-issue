@@ -50,7 +50,15 @@ Kill-Issue/
 
 重启后生效。若安装工具校验名字要求全小写，把文件夹改名为 `kill-issue` 即可（内容不用改）。
 
-### 方式 C：其他 agent
+### 方式 C：OpenAI 生态（Codex CLI / ChatGPT Agent Skills）
+
+OpenAI 生态兼容 SKILL.md 规范（name + description frontmatter），可直接使用：
+
+- **OpenAI Codex CLI**：把 `Kill-Issue/` 文件夹放到 `~/.codex/skills/`（全局）或项目 `.codex/skills/`（项目级），Codex 通过 AGENTS.md 自动加载
+- **ChatGPT Agent Skills**：在支持 Agent Skills 的产品/界面中导入 `Kill-Issue.skill` 技能包
+- 大小写校验不通过时改名 `kill-issue`（仅安装适配，正式名为 Kill-Issue）
+
+### 方式 D：其他 agent
 
 看是否支持 skills 规范（SKILL.md + YAML frontmatter）；不支持时，SKILL.md 本身可作为排查流程的方法论文档参考。
 

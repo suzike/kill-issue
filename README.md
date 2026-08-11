@@ -104,6 +104,14 @@ Kill-Issue/
 
 把 `Kill-Issue/` 文件夹放到 `~/.claude/skills/`（个人）或项目 `.claude/skills/`（项目级）。若工具校验要求全小写，文件夹改名 `kill-issue` 即可（仅安装适配，正式名为 Kill-Issue）。
 
+### OpenAI 生态（Codex CLI / ChatGPT Agent Skills）
+
+OpenAI 生态兼容 SKILL.md 规范（name + description frontmatter），可直接使用：
+
+- **OpenAI Codex CLI**：把 `Kill-Issue/` 文件夹放到 `~/.codex/skills/`（全局）或项目 `.codex/skills/`（项目级），Codex 通过 AGENTS.md 自动加载
+- **ChatGPT Agent Skills**：在支持 Agent Skills 的产品 / 界面中导入 `dist/Kill-Issue.skill` 技能包
+- 大小写校验不通过时改名 `kill-issue`（仅安装适配，正式名为 Kill-Issue）
+
 ---
 
 ## 🚀 快速开始
