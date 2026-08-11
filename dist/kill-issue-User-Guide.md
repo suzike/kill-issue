@@ -1,10 +1,10 @@
-# Kill-Issue 使用说明
+# kill-issue 使用说明
 
-汽车软件问题排查 Skill —— 配套文件：`Kill-Issue.skill`（zip 包，即本说明对应的技能本体）。
+汽车软件问题排查 Skill —— 配套文件：`kill-issue.skill`（zip 包，即本说明对应的技能本体）。
 
 ## 一、这是什么
 
-Kill-Issue 把"汽车控制器软件问题排查"固化为**通用标准流程**（不限于任何特定控制器、功能类型或问题类型），适用于：
+kill-issue 把"汽车控制器软件问题排查"固化为**通用标准流程**（不限于任何特定控制器、功能类型或问题类型），适用于：
 
 - Simulink 控制模型或生成代码的行为异常（状态/模式/显示、按键或请求联动、控制逻辑、执行器、传感器等各类问题）
 - HIL / MIL 测试失败、整车实验异常、标定问题
@@ -16,7 +16,7 @@ Kill-Issue 把"汽车控制器软件问题排查"固化为**通用标准流程**
 ## 二、Skill 内容结构
 
 ```
-Kill-Issue/
+kill-issue/
 ├── SKILL.md                          主流程（初始化并规整上下文→收集输入并自动生成问题描述→澄清→判定归属层→定位→选模板、出报告→登记）
 ├── scripts/init_context.py           初始化脚本（建上下文目录、台账、问题文件夹、文件归类）
 ├── references/
@@ -35,30 +35,22 @@ Kill-Issue/
 
 ### 方式 A：Reasonix（推荐）
 
-把 `Kill-Issue.skill` 放到本地，解压出 `Kill-Issue/` 文件夹，放到以下任一位置：
+把 `kill-issue.skill` 放到本地，解压出 `kill-issue/` 文件夹，放到以下任一位置：
 
 - **项目级**（仅当前项目生效）：项目根目录下 `.reasonix/skills/`
 - **全局**（所有项目生效）：Reasonix home 的 skills 目录
 
-也可以在 Reasonix 会话里直接说"安装这个 skill：<Kill-Issue.skill 路径>"，由 agent 自动处理。
+也可以在 Reasonix 会话里直接说"安装这个 skill：<kill-issue.skill 路径>"，由 agent 自动处理。
 
 ### 方式 B：Claude Code / Anthropic 生态
 
-解压后把 `Kill-Issue/` 文件夹放到：
+解压后把 `kill-issue/` 文件夹放到：
 
 - `~/.claude/skills/`（个人全局）或项目 `.claude/skills/`（项目级）
 
 重启后生效。若安装工具校验名字要求全小写，把文件夹改名为 `kill-issue` 即可（内容不用改）。
 
-### 方式 C：OpenAI 生态（Codex CLI / ChatGPT Agent Skills）
-
-OpenAI 生态兼容 SKILL.md 规范（name + description frontmatter），可直接使用：
-
-- **OpenAI Codex CLI**：把 `Kill-Issue/` 文件夹放到 `~/.codex/skills/`（全局）或项目 `.codex/skills/`（项目级），Codex 通过 AGENTS.md 自动加载
-- **ChatGPT Agent Skills**：在支持 Agent Skills 的产品/界面中导入 `Kill-Issue.skill` 技能包
-- 大小写校验不通过时改名 `kill-issue`（仅安装适配，正式名为 Kill-Issue）
-
-### 方式 D：其他 agent
+### 方式 C：其他 agent
 
 看是否支持 skills 规范（SKILL.md + YAML frontmatter）；不支持时，SKILL.md 本身可作为排查流程的方法论文档参考。
 
@@ -67,7 +59,7 @@ OpenAI 生态兼容 SKILL.md 规范（name + description frontmatter），可直
 ### 1. 触发
 
 - **自动**：对话中出现触发词即生效——问题排查、根因分析、bug、故障、异常、HIL、MIL、整车实验、标定、报错、logs、报文、现象不符、行为异常、状态不对、逻辑错误、通信异常、故障码 DTC、执行器、传感器、显示异常等。
-- **手动**：直接说"用 Kill-Issue 排查这个问题"。
+- **手动**：直接说"用 kill-issue 排查这个问题"。
 
 ### 2. 首次使用：初始化项目结构
 
@@ -138,7 +130,7 @@ python scripts/init_context.py <项目根> --issue "001-问题精确描述"
 
 | 问题 | 处理 |
 |---|---|
-| 安装后不生效 | 确认文件夹名与路径正确（.reasonix/skills/ 或 ~/.claude/skills/）；大小写校验不过就改名为 kill-issue（仅安装工具适配，正式名为 Kill-Issue） |
+| 安装后不生效 | 确认文件夹名与路径正确（.reasonix/skills/ 或 ~/.claude/skills/）；大小写校验不过就改名为 kill-issue（仅安装工具适配，正式名为 kill-issue） |
 | 模型与生成代码对不上 | 以生成代码（实际刷写软件）为准，报告中注明版本与构建时间 |
 | 报文 ID 看不懂 | 需要 DBC/接口表（04_Interface），缺失时会让用户补充 |
 | .dat/.rec 文件读不了 | 用 CANape 导出为 .mf4/.csv 再分析 |
@@ -146,6 +138,6 @@ python scripts/init_context.py <项目根> --issue "001-问题精确描述"
 
 ## 七、版本
 
-- Skill 版本：1.0（Kill-Issue）
-- 打包产物：Kill-Issue.skill（zip 格式，顶层目录 Kill-Issue/）
+- Skill 版本：1.0（kill-issue）
+- 打包产物：kill-issue.skill（zip 格式，顶层目录 kill-issue/）
 - 适用：任何 Simulink 控制模型 / 生成代码项目（本 skill 已泛化为通用方法论，不限于特定控制器或功能类型）

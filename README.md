@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 Kill-Issue · 汽车软件问题排查 Skill
+# 🎯 kill-issue · 汽车软件问题排查 Skill
 
 **把"汽车控制器软件问题排查"固化为标准流程 —— 读上下文 → 澄清问题 → 判定归属层 → 定位证据 → 输出规范化报告 → 登记台账**
 
@@ -8,7 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/suzike/kill-issue?style=flat-square&color=yellow&label=Stars)](../../stargazers)
 [![Repo size](https://img.shields.io/github/repo-size/suzike/kill-issue?style=flat-square&color=blueviolet&label=Repo%20Size)](../../)
 [![Last commit](https://img.shields.io/github/last-commit/suzike/kill-issue?style=flat-square&color=informational&label=Last%20Commit)](../../commits)
-[![Language](https://img.shields.io/badge/Language-Markdown%20%7C%20Python-blue?style=flat-square)](./skill/Kill-Issue)
+[![Language](https://img.shields.io/badge/Language-Markdown%20%7C%20Python-blue?style=flat-square)](./skill/kill-issue)
 [![License](https://img.shields.io/badge/License-Proprietary-lightgrey?style=flat-square)](./README.md#许可)
 
 ---
@@ -61,20 +61,20 @@
 
 ## 🔄 工作流
 
-![Kill-Issue 排查工作流](docs/images/workflow.svg)
+![kill-issue 排查工作流](docs/images/workflow.svg)
 
 ---
 
 ## 🧩 结构组成
 
-![Kill-Issue 结构组成](docs/images/structure.svg)
+![kill-issue 结构组成](docs/images/structure.svg)
 
 ---
 
 ## 📂 目录结构
 
 ```
-Kill-Issue/
+kill-issue/
 ├── SKILL.md                          主流程（7 步排查）
 ├── scripts/init_context.py           初始化：建上下文目录/台账/问题文件夹/文件归类
 ├── references/
@@ -95,22 +95,22 @@ Kill-Issue/
 
 ### Reasonix（推荐）
 
-解压 `dist/Kill-Issue.skill`，把 `Kill-Issue/` 文件夹放到：
+解压 `dist/kill-issue.skill`，把 `kill-issue/` 文件夹放到：
 
 - 项目级：项目根 `.reasonix/skills/`
 - 全局：Reasonix home 的 skills 目录
 
 ### Claude Code / Anthropic 生态
 
-把 `Kill-Issue/` 文件夹放到 `~/.claude/skills/`（个人）或项目 `.claude/skills/`（项目级）。若工具校验要求全小写，文件夹改名 `kill-issue` 即可（仅安装适配，正式名为 Kill-Issue）。
+把 `kill-issue/` 文件夹放到 `~/.claude/skills/`（个人）或项目 `.claude/skills/`（项目级）。若工具校验要求全小写，文件夹改名 `kill-issue` 即可（仅安装适配，正式名为 kill-issue）。
 
 ### OpenAI 生态（Codex CLI / ChatGPT Agent Skills）
 
 OpenAI 生态兼容 SKILL.md 规范（name + description frontmatter），可直接使用：
 
-- **OpenAI Codex CLI**：把 `Kill-Issue/` 文件夹放到 `~/.codex/skills/`（全局）或项目 `.codex/skills/`（项目级），Codex 通过 AGENTS.md 自动加载
-- **ChatGPT Agent Skills**：在支持 Agent Skills 的产品 / 界面中导入 `dist/Kill-Issue.skill` 技能包
-- 大小写校验不通过时改名 `kill-issue`（仅安装适配，正式名为 Kill-Issue）
+- **OpenAI Codex CLI**：把 `kill-issue/` 文件夹放到 `~/.codex/skills/`（全局）或项目 `.codex/skills/`（项目级），Codex 通过 AGENTS.md 自动加载
+- **ChatGPT Agent Skills**：在支持 Agent Skills 的产品 / 界面中导入 `dist/kill-issue.skill` 技能包
+- 大小写校验不通过时改名 `kill-issue`（仅安装适配，正式名为 kill-issue）
 
 ---
 
@@ -182,7 +182,7 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 |---|---|---|
 | v1.0.0 | 首个正式版：通用流程 + 5 种报告模板 + 初始化脚本 + 完整文档 | [Releases](../../releases) |
 
-Release 打包产物：`Kill-Issue.skill`（zip 格式，顶层目录 `Kill-Issue/`），见 [dist/](dist/)。
+Release 打包产物：`kill-issue.skill`（zip 格式，顶层目录 `kill-issue/`），见 [dist/](dist/)。
 
 ---
 
