@@ -2,7 +2,7 @@
 
 # 🎯 kill-issue · 汽车软件问题排查 Skill
 
-**把"汽车控制器软件问题排查"固化为标准流程 —— 读上下文 → 澄清问题 → 判定归属层 → 定位证据 → 输出规范化报告 → 登记台账**
+**把"汽车控制器软件问题排查"固化为标准流程 —— 规整目录 → 读上下文 → 苏格拉底式澄清 → 判定归属层 → 定位证据 → 输出规范化报告 → 登记台账**
 
 [![Release](https://img.shields.io/github/v/release/suzike/kill-issue?style=flat-square&color=blue&label=Release)](../../releases)
 [![GitHub stars](https://img.shields.io/github/stars/suzike/kill-issue?style=flat-square&color=yellow&label=Stars)](../../stargazers)
@@ -55,7 +55,7 @@
 - **5 种报告模板**：根因分析（默认）、通用问题排查、5W、8D、轻量简报
 - **工程师零负担**：只丢文件（logs / CANoe·CANape 报文 / 截图 / trace）+ 一句话描述，信息由 agent 自动补全
 - **上下文分级**：模型+代码必须，DBC 条件必需，其余按需——不要求 7 类材料给全
-- **结构化目录**：`000_Context/` 通用上下文 + `001/002/003-问题` 串行编号 + 最外层台账
+- **结构化目录**：`000-context/` 通用上下文 + `001/002/003-问题` 串行编号（问题文件夹内部 001 描述上下文 / 002 过程数据 / 003 报告证据）+ 最外层台账
 
 ---
 
@@ -126,7 +126,7 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 
 工程师只需两步，其余交给 agent：
 
-1. 把问题文件丢进 `附件/` 或拖入对话：logs、CANoe/CANape 报文（.asc/.blf/.mf4/.dat）、截图、trace
+1. 把问题文件丢进问题文件夹 `001/` 或拖入对话：logs、CANoe/CANape 报文（.asc/.blf/.mf4/.dat）、截图、trace
 2. 输入框一句话描述："XX 模式下某执行器开度很小调不了"
 
 ---
@@ -168,8 +168,8 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 
 ```
 <项目根>/
-├── 000_Context/          # 通用上下文（所有问题共享）
-├── 001-问题精确描述/      # 问题 001：问题描述.md + 附件/ + 证据/ + 报告
+├── 000-context/          # 通用上下文（所有问题共享，按类别分子目录）
+├── 001-问题精确描述/      # 问题 001：内部 001/描述+专属上下文、002/过程数据、003/报告+证据
 ├── 002-问题精确描述/
 └── 问题清单.md            # 台账（最外层，每完成一个问题登记一行）
 ```

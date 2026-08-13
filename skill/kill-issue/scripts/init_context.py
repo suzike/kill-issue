@@ -4,19 +4,22 @@
 
 一键创建排查项目所需的目录结构、台账与问题文件夹：
 
-    python init_context.py <项目根> [--context-dir 000_Context] [--issue "001-标题"] [--organize <目录>]
+    python init_context.py <项目根> [--context-dir 000-context] [--issue "001-标题"] [--organize <目录>]
 
 功能：
-  1. 创建通用上下文目录（000_Context/01_Model ... 07_Logs）。已存在的目录不重建，只报告。
+  1. 创建通用上下文目录（000-context/01_Model ... 07_Logs）。已存在的目录不重建，只报告。
   2. 创建问题清单台账（项目根 问题清单.md），已存在则跳过。
-  3. --issue "001-标题"：额外创建问题文件夹（问题描述.md 模板 + 附件/、证据/）。
-  4. --organize <目录>：对散放文件做启发式归类到 000_Context 子目录（*.slx→01_Model、
+  3. --issue "001-标题"：额外创建问题文件夹，内部按三级分级：
+       001/  —— 问题描述与排查上下文（问题描述.md + logs/）
+       002/  —— 中间排查过程数据（脚本、中间结果）
+       003/  —— 最终调查报告与证据
+  4. --organize <目录>：对散放文件做启发式归类到 000-context 子目录（*.slx→01_Model、
      *_autosar_rtw/*.c/*.h→02_Code、需求文档→03_Requirement、接口/ARXML/DBC→04_Interface、
      *.sldd/*.a2l→05_Calibration、测试说明→06_Test、日志/报文→07_Logs）；
      不确定类别的文件列出但不移动。
 
-已有工程（如 ModelandCode_SOP_3/）本身可作为通用上下文，脚本会识别已存在目录，
-不会重复创建；此时只需 --issue 创建问题文件夹即可。
+已有工程（如 ModelandCode_SOP_3/）本身可作为通用上下文，排查前按 SKILL.md 第 0 步
+将其改名/归类为 000-context；脚本会识别已存在目录，不会重复创建。
 """
 
 import argparse
@@ -79,7 +82,7 @@ ISSUE_TEMPLATE = """# 问题描述（由排查 agent 自动补全，工程师无
 - 模型版本：
 - 标定版本：
 
-## 附件清单（工程师放入 附件/ 或拖入对话的文件）
+## 文件清单（工程师放入 001/ 或拖入对话的文件）
 
 | 文件名 | 类型 | 用途 / 时间段 |
 |---|---|---|
@@ -123,29 +126,34 @@ def create_ledger(root: str) -> None:
 
 
 def create_issue(root: str, issue: str) -> None:
-    """创建问题文件夹：从 assets/issue-folder-template/ 读取模板生成 问题描述.md、
-    复制 附件说明.md 到 附件/，再建 证据/ 空目录（assets 缺失时用内嵌模板兜底）。"""
+    """创建问题文件夹（001/002/003 三级）：
+    - 001/：问题描述与排查上下文（问题描述.md + logs/ + 附件说明.md）
+    - 002/：中间排查过程数据（脚本、中间结果）
+    - 003/：最终调查报告与证据
+    模板从 assets/issue-folder-template/ 读取（assets 缺失时用内嵌模板兜底）。"""
     folder = os.path.join(root, issue)
     if os.path.isdir(folder):
         print(f"  [存在] {folder}（跳过）")
         return
-    os.makedirs(folder, exist_ok=True)
-    for sub in ("附件", "证据"):
+    for sub in ("001", "002", "003"):
         os.makedirs(os.path.join(folder, sub), exist_ok=True)
-    desc = os.path.join(folder, "问题描述.md")
+        print(f"  [新建] {folder}/{sub}/")
+    logs = os.path.join(folder, "001", "logs")
+    os.makedirs(logs, exist_ok=True)
+    desc = os.path.join(folder, "001", "问题描述.md")
     if not os.path.isfile(desc):
         tmpl = _read_asset("问题描述.md") or ISSUE_TEMPLATE
         content = tmpl.format(title=issue) if "{title}" in tmpl \
             else tmpl.replace("<自动提取的一句话现象描述>", issue)
         with open(desc, "w", encoding="utf-8") as f:
             f.write(content)
-    attach = os.path.join(folder, "附件", "附件说明.md")
+    attach = os.path.join(logs, "附件说明.md")
     if not os.path.isfile(attach):
         note = _read_asset("附件说明.md")
         if note is not None:
             with open(attach, "w", encoding="utf-8") as f:
                 f.write(note)
-    print(f"  [新建] {folder}/（问题描述.md + 附件说明.md + 附件/ + 证据/）")
+    print(f"  [新建] {folder}/001/问题描述.md + 001/logs/（本问题专属上下文）")
 
 
 def _read_asset(name: str) -> str | None:
@@ -204,8 +212,8 @@ def organize(root: str, context_name: str, src: str) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="初始化汽车软件问题排查项目结构")
     parser.add_argument("project_root", help="项目根目录")
-    parser.add_argument("--context-dir", default="000_Context",
-                        help="通用上下文目录名（默认 000_Context）")
+    parser.add_argument("--context-dir", default="000-context",
+                        help="通用上下文目录名（默认 000-context）")
     parser.add_argument("--issue", help='创建问题文件夹，如 "001-标题"')
     parser.add_argument("--organize", metavar="DIR",
                         help="对指定目录下的散放文件做启发式归类到上下文子目录")
