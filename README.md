@@ -180,7 +180,10 @@ python scripts/init_context.py <项目根> --organize <散放目录>
 
 | 版本 | 说明 | Release |
 |---|---|---|
+| v1.1.0 | 目录规整升级（000-context + 问题文件夹 001/002/003 三级）+ 苏格拉底式逐个澄清 + 通用问题排查报告模板 + 日志解析指引 + 配图修复 | [Releases](../../releases) |
 | v1.0.0 | 首个正式版：通用流程 + 5 种报告模板 + 初始化脚本 + 完整文档 | [Releases](../../releases) |
+
+变更明细见 [CHANGELOG.md](CHANGELOG.md)。
 
 Release 打包产物：`kill-issue.skill`（zip 格式，顶层目录 `kill-issue/`），见 [dist/](dist/)。
 

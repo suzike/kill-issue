@@ -6,9 +6,9 @@
   </defs>
 
   <!-- 顶部：SKILL.md -->
-  <rect x="330" y="30" width="340" height="64" rx="14" fill="#1d4ed8"/>
+  <rect x="300" y="30" width="400" height="64" rx="14" fill="#1d4ed8"/>
   <text x="500" y="58" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">SKILL.md · 主流程</text>
-  <text x="500" y="80" font-size="12.5" fill="#dbeafe" text-anchor="middle">7 步排查流程：初始化 → 收集 → 澄清 → 判定 → 定位 → 出报告 → 登记</text>
+  <text x="500" y="80" font-size="12.5" fill="#dbeafe" text-anchor="middle">7 步排查：规整目录 → 收集 → 澄清 → 判定 → 定位 → 报告 → 登记</text>
 
   <!-- 连线（起点贴 SKILL.md 卡片底 94，箭头尖落卡片顶边框 160） -->
   <line x1="390" y1="94" x2="260" y2="160" stroke="#93c5fd" stroke-width="2" marker-end="url(#arr2)"/>

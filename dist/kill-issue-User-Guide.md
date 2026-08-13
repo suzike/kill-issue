@@ -138,6 +138,6 @@ python scripts/init_context.py <项目根> --issue "001-问题精确描述"
 
 ## 七、版本
 
-- Skill 版本：1.0（kill-issue）
+- Skill 版本：1.1（kill-issue）
 - 打包产物：kill-issue.skill（zip 格式，顶层目录 kill-issue/）
 - 适用：任何 Simulink 控制模型 / 生成代码项目（本 skill 已泛化为通用方法论，不限于特定控制器或功能类型）
