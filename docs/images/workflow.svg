@@ -16,15 +16,15 @@
     <rect x="1000" y="50" width="250" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
   </g>
   <g font-size="15" fill="#1e293b" text-anchor="middle">
-    <text x="165"  y="95">① 初始化并规整上下文</text>
+    <text x="165"  y="95">① 规整目录结构</text>
     <text x="485"  y="95">② 收集输入并自动生成问题描述</text>
-    <text x="805"  y="95">③ 澄清提问</text>
+    <text x="805"  y="95">③ 苏格拉底式逐个澄清</text>
     <text x="1125" y="95">④ 判定问题归属层</text>
   </g>
   <g font-size="11.5" fill="#475569" text-anchor="middle">
-    <text x="165"  y="122">000_Context/ · 材料分级检查</text>
+    <text x="165"  y="122">000-context/ · 001/002/003 分级 · 材料检查</text>
     <text x="485"  y="122">工程师：丢文件 + 一句话</text>
-    <text x="805"  y="122">现象/预期/复现/版本/报告形式</text>
+    <text x="805"  y="122">全量扫描后逐个问 · 每题 4 选项+推荐</text>
     <text x="1125" y="122">模型 · 软件 · 测试 · 需求 · 其他</text>
   </g>
 
@@ -56,17 +56,17 @@
     <circle cx="379"  cy="319" r="14" fill="#0e7490"/><text x="379"  y="324">7</text>
   </g>
 
-  <!-- 行内箭头 -->
-  <line x1="292" y1="105" x2="356" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="612" y1="105" x2="676" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="932" y1="105" x2="996" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="1002" y1="355" x2="936" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="682" y1="355" x2="616" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- 行内箭头（起点贴卡边缘，箭头尖落目标卡边缘） -->
+  <line x1="290" y1="105" x2="360" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="610" y1="105" x2="680" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="930" y1="105" x2="1000" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="355" x2="930" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="680" y1="355" x2="610" y2="355" stroke="#0e7490" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- ④ → ⑤ 垂直箭头 -->
-  <line x1="1125" y1="162" x2="1125" y2="296" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- ④ → ⑤ 垂直箭头（贴行1卡片底 160，箭头尖落行2卡片顶 300） -->
+  <line x1="1125" y1="160" x2="1125" y2="300" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- ⑦ → ① 循环虚线箭头 -->
-  <path d="M 358,355 L 20,355 L 20,160 L 36,160" fill="none" stroke="#0e7490" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowLoop)"/>
-  <text x="20" y="262" font-size="11.5" fill="#0e7490" text-anchor="middle" transform="rotate(-90 20 262)">下一个问题</text>
+  <!-- ⑦ → ① 循环虚线箭头（起点贴⑦卡左缘，箭头尖落①卡左缘 40） -->
+  <path d="M 360,355 L 20,355 L 20,160 L 40,160" fill="none" stroke="#0e7490" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowLoop)"/>
+  <text x="34" y="262" font-size="11.5" fill="#0e7490" text-anchor="middle" transform="rotate(-90 34 262)">下一个问题</text>
 </svg>
